@@ -30,7 +30,6 @@ export class Server {
   private config(): void {
     morgan("dev");
     this.app.use(morgan("tiny"));
-
     this.app.use(cors(corsSetup));
     this.app.use(express.json());
   }
