@@ -1,4 +1,5 @@
-import sequelize from "../db";
+import { Models } from "../database";
+import { sequelize } from "../database/sequelize";
 import corsSetup from "./cors";
 import routes from "./routes";
 
@@ -14,7 +15,7 @@ export class Server {
     this.app = express();
 
     this.config();
-    this.models = {};
+    this.models = Models;
     routes.map((key) => this.app.use(key));
 
     this.connectDb()

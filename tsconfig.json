@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "outDir": "./build",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ],
+      "@server/*": ["/server/*"],
+      "@middlewares/*": ["/middlewares/*"],
+      "@configuration/*": ["/configuration/*"],
+    },
+
+  },
+  "lib": ["es2015"],
+  "exclude": [
+    "node_modules"
+  ],    
+  "typeRoots": [
+    "./types", 
+    "./node_modules/@types"
+  ],
+  "files":["./src/types/types.d.ts"]
+}

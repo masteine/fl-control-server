@@ -1,8 +1,8 @@
-import sequelize from "../index";
 import { DataTypes } from "sequelize";
+import { sequelize } from "../../database/sequelize";
 const { UUID, STRING } = DataTypes;
 
-const User = sequelize.define("User", {
+export const User = sequelize.define("User", {
   id: { type: UUID, primaryKey: true, allowNull: false },
   username: { type: STRING, unique: true },
   email: { type: STRING, unique: true, allowNull: false },
@@ -16,5 +16,3 @@ const User = sequelize.define("User", {
   // meals_id int [ref: > meals.id]
   // pills_id int [ref: > pills.id]
 });
-
-export default User;

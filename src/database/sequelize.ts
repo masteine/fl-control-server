@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("fl_control_db", "postgres", "root", {
+export const sequelize = new Sequelize("fl_control_db", "postgres", "root", {
   pool: {
     max: 5,
     min: 0,
@@ -10,5 +10,3 @@ const sequelize = new Sequelize("fl_control_db", "postgres", "root", {
   host: "localhost",
   port: 5432
 });
-
-export default sequelize;
