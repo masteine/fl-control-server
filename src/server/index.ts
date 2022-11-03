@@ -1,4 +1,4 @@
-import { Models } from "../database";
+import { Models } from "../database/models";
 import { sequelize } from "../database/sequelize";
 import corsSetup from "./cors";
 import routes from "./routes";

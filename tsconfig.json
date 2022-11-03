@@ -6,17 +6,20 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": "./src",
+    "rootDir": "src",
+    "allowJs": true,
     "outDir": "./build",
     "paths": {
       "*": [
         "node_modules/*"
       ],
-      "@server/*": ["/server/*"],
+      "@server/*": ["/components/*"],
       "@middlewares/*": ["/middlewares/*"],
       "@configuration/*": ["/configuration/*"],
     },
 
   },
+  "include": ["src"],
   "lib": ["es2015"],
   "exclude": [
     "node_modules"
