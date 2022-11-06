@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsd": "tsnd --respawn src/index.ts",
+    "tsd": "tsnd -r tsconfig-paths/register src/index.ts",
     "start": "node src/index.js",
     "nodemon": "nodemon",
     "dev": "nodemon --legacy-watch --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",

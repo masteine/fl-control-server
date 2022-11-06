@@ -6,18 +6,25 @@ const router = Router();
 
 const { register, login } = UserController;
 
-const authBaseApiUrl: string = "/api/auth";
+const AUTH_URL: string = "/api/auth";
 
 export const UserRouter = router
   .post(
-    `${authBaseApiUrl}/register`,
+    `${AUTH_URL}/register`,
     [
       body("email").isEmail().notEmpty(),
       body("password").isLength({ min: 8, max: 24 }).notEmpty()
     ],
     register
   )
-  .post(`${authBaseApiUrl}/login`, login);
+  .post(
+    `${AUTH_URL}/login`,
+    [
+      body("email").isEmail().notEmpty(),
+      body("password").isLength({ min: 8, max: 24 }).notEmpty()
+    ],
+    login
+  );
 // .get(`${authBaseApiUrl}/logout`, authMiddleware(), logout)
 // .get(`${authBaseApiUrl}/users`, authMiddleware(), getUsers)
 // .put(

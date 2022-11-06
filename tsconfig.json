@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "rootDir": "src",
     "allowJs": true,
     "outDir": "./build",
@@ -13,9 +13,12 @@
       "*": [
         "node_modules/*"
       ],
-      "@server/*": ["/components/*"],
-      "@middlewares/*": ["/middlewares/*"],
-      "@configuration/*": ["/configuration/*"],
+      "@components/*": ["components/*"],
+      "@server/*": ["server/*"],
+      "@database/*": ["database/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@configuration/*": ["configuration/*"],
+      "@utils/*": ["utils/*"]
     },
 
   },

@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../../database/sequelize";
+import { sequelize } from "@database/sequelize";
 const { STRING, INTEGER } = DataTypes;
 
 export const User = sequelize.define("User", {
@@ -12,7 +12,7 @@ export const User = sequelize.define("User", {
   username: { type: STRING, unique: true },
   email: { type: STRING, unique: true, allowNull: false },
   password: { type: STRING },
-  first_name: { type: STRING, allowNull: false },
+  first_name: { type: STRING },
   last_name: { type: STRING },
   role: { type: STRING, defaultValue: "user" }
   // condition_id int [ref: > conditions.id]

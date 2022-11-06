@@ -1,6 +1,6 @@
-import { Models } from "../database/models";
-import { sequelize } from "../database/sequelize";
-import corsSetup from "./cors";
+import { Models } from "@database/models";
+import { sequelize } from "@database/sequelize";
+import { corsSetup } from "./cors";
 import routes from "./routes";
 
 const cors = require("cors");
@@ -25,7 +25,7 @@ export class Server {
 
   private connectDb = async (): Promise<void> => {
     await sequelize.authenticate();
-    await sequelize.sync();
+    //await sequelize.sync();
   };
 
   private config(): void {
