@@ -4,7 +4,7 @@ import { body, check } from "express-validator";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 const router = Router();
 
-const { register, login } = UserController;
+const { register, login, refreshToken } = UserController;
 
 const AUTH_URL: string = "/api/auth";
 
@@ -24,7 +24,8 @@ export const UserRouter = router
       body("password").isLength({ min: 8, max: 24 }).notEmpty()
     ],
     login
-  );
+  )
+  .post(`${AUTH_URL}/refreshToken`, [], refreshToken);
 // .get(`${authBaseApiUrl}/logout`, authMiddleware(), logout)
 // .get(`${authBaseApiUrl}/users`, authMiddleware(), getUsers)
 // .put(

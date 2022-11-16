@@ -39,7 +39,9 @@ export const UserController = {
     } catch (e) {
       return res.json({ message: `${e}`, data: null });
     }
-  }
+  },
+  refreshToken: async (req: Request, res: Response): Promise<any> => {}
+
   // async logout(req, res: Response): Promise<any> {
   //   req.session.destroy(() =>
   //     res.status(200).json({ message: "Logout is successfully." })
@@ -48,7 +50,6 @@ export const UserController = {
   // async getUsers(req, res) {
   //   try {
   //     const users = await UserServices.getUsers();
-  //
   //     return res.json({ data: users });
   //   } catch (e) {
   //     return res.json({ message: `${e}`, data: {} });

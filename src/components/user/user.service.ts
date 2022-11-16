@@ -52,7 +52,7 @@ export const UserService = {
 
     const token = (id: string = currentUser.id, roles: string = "user") => {
       const payload = { id, roles };
-      return jwt.sign(payload, secretKey, { expiresIn: "24h" });
+      return jwt.sign(payload, secretKey, { expiresIn: "1h" });
     };
 
     delete currentUser.dataValues.password;
