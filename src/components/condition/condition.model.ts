@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/sequelize";
-const { STRING, INTEGER, DATE } = DataTypes;
+const { INTEGER, DATE } = DataTypes;
 
-export const Conditions = sequelize.define("Conditions", {
+export const Conditions = sequelize.define("conditions", {
   id: {
     type: INTEGER,
     primaryKey: true,

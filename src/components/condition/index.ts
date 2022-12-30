@@ -1,3 +1,3 @@
-import { Conditions as ConditionsModel } from "./conditions.model";
+import { Conditions as ConditionsModel } from "./condition.model";
 
 export { ConditionsModel };

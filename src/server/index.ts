@@ -25,7 +25,7 @@ export class Server {
 
   private connectDb = async (): Promise<void> => {
     await sequelize.authenticate();
-    //await sequelize.sync();
+    await sequelize.sync();
   };
 
   private config(): void {

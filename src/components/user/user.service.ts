@@ -1,7 +1,7 @@
-import { User as UserModel } from "./user.model";
+import { UserModel } from "./user.model";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { secretKey } from "../../configuration";
+import { secretKey } from "@configuration/index";
 import { CreateUserDto, LoginUserPayload } from "@components/user/user.dto";
 
 export const UserService = {

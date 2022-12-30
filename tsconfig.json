@@ -10,26 +10,18 @@
     "allowJs": true,
     "outDir": "./build",
     "paths": {
-      "*": [
-        "node_modules/*"
-      ],
+      "*": ["node_modules/*"],
       "@components/*": ["components/*"],
       "@server/*": ["server/*"],
       "@database/*": ["database/*"],
       "@middlewares/*": ["middlewares/*"],
       "@configuration/*": ["configuration/*"],
       "@utils/*": ["utils/*"]
-    },
-
+    }
   },
   "include": ["src"],
   "lib": ["es2015"],
-  "exclude": [
-    "node_modules"
-  ],    
-  "typeRoots": [
-    "./types", 
-    "./node_modules/@types"
-  ],
-  "files":["./src/types/types.d.ts"]
+  "exclude": ["node_modules"],
+  "typeRoots": ["./types", "./node_modules/@types"],
+  "files": ["./src/types/types.d.ts"]
 }

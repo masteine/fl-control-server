@@ -1,4 +1,4 @@
-import { User as UserModel } from "./user.model";
+import { UserModel } from "./user.model";
 import { UserController } from "./user.controller";
 import { UserRouter } from "./user.router";
 

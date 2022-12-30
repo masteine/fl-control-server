@@ -6,10 +6,13 @@ export const UserController = {
   register: async (req: Request, res: Response): Promise<any> => {
     try {
       const errors = validationResult(req);
+
       if (!errors.isEmpty()) {
         return res.status(403).json({ data: null, message: errors.array() });
       }
+
       const user = await UserService.findUserByEmail(req.body.email);
+
       if (user.data) {
         return res.status(400).json({
           message: user.message,
@@ -23,6 +26,7 @@ export const UserController = {
       return res.json({ message: `${e}`, data: null });
     }
   },
+
   login: async (req: Request, res: Response): Promise<any> => {
     try {
       const result = await UserService.loginUser(req.body);
@@ -31,16 +35,17 @@ export const UserController = {
         return res.status(403).json(result);
       }
 
-      req.body.email = result.data.email;
-      req.body.user_id = result.data.id;
-      req.body.token = result.data.token;
+      // req.body.email = result.data.email;
+      // req.body.user_id = result.data.id;
+      // req.body.token = result.data.token;
 
       return res.status(200).json(result);
     } catch (e) {
       return res.json({ message: `${e}`, data: null });
     }
   },
-  refreshToken: async (req: Request, res: Response): Promise<any> => {}
+  refreshToken: async (req: Request, res: Response): Promise<any> => {},
+  updateUser: async (req: Request, res: Response): Promise<any> => {}
 
   // async logout(req, res: Response): Promise<any> {
   //   req.session.destroy(() =>
